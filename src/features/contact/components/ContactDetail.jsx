@@ -12,6 +12,7 @@ const ContactDetail = ({
   showEditForm,
   setShowEditForm,
   onEditSubmit,
+  editLoading,
 }) => {
   const { firstName, lastName, age, photo } = contact;
 

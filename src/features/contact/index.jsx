@@ -145,6 +145,7 @@ const Contact = () => {
               onEditSubmit={onEditSubmit}
               showEditForm={showEditForm}
               setShowEditForm={setShowEditForm}
+              editLoading={contactState.loading.put}
             />
           )}
 
