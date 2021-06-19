@@ -2,7 +2,7 @@ import { default as axios } from "axios";
 
 const { REACT_APP_URL } = process.env;
 
-export default {
+const contactService = {
   get: async (id = undefined) => {
     if (id) return await axios.get(`${REACT_APP_URL}/contact/${id}`);
 
@@ -25,3 +25,5 @@ export default {
     return await axios.delete(`${REACT_APP_URL}/contact/${id}`);
   },
 };
+
+export default contactService;
