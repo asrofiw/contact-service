@@ -23,24 +23,27 @@ const Contact = () => {
   const [deleteModal, setDeleteModal] = useState(false);
   const [showError, setShowError] = useState(false);
   const [showEditForm, setShowEditForm] = useState(false);
-  const [messageError, setMessageError] = useState('');
+  const [messageError, setMessageError] = useState("");
   const [toBeDeleted, setToBeDeleted] = useState(undefined);
 
   useEffect(() => {
     dispatch(getContacts());
-    if (!contactState.loading.put) setDetailModal(false);
+    if (!contactState.loading.put) {
+      setDetailModal(false);
+      setShowEditForm(false);
+    }
     if (!contactState.loading.post) setPostModal(false);
     if (!contactState.loading.delete) setDeleteModal(false);
     if (contactState.lastErrorMessage) {
-      setMessageError(contactState.lastErrorMessage)
-      setShowError(true)
+      setMessageError(contactState.lastErrorMessage);
+      setShowError(true);
     }
   }, [
     dispatch,
     contactState.loading.put,
     contactState.loading.post,
     contactState.loading.delete,
-    contactState.lastErrorMessage
+    contactState.lastErrorMessage,
   ]);
 
   const onDetailClick = (id) => {
@@ -104,23 +107,23 @@ const Contact = () => {
 
   const onCloseError = () => {
     setShowError(false);
-  }
+  };
 
   return (
     <>
       <div className={style.contact}>
         <div className={style.inner}>
           <h1 className={style.title}>Contact List</h1>
-          
+
           {!contactState.loading.get && (
-          <button
-            type="button"
-            className={style["add-button"]}
-            onClick={onPostOpenModalClick}
-          >
-            + Add New Contact
-          </button>
-        )}
+            <button
+              type="button"
+              className={style["add-button"]}
+              onClick={onPostOpenModalClick}
+            >
+              + Add New Contact
+            </button>
+          )}
 
           {contactState.loading.get && <p>Getting Contacts...</p>}
 
@@ -142,7 +145,6 @@ const Contact = () => {
               onEditSubmit={onEditSubmit}
               showEditForm={showEditForm}
               setShowEditForm={setShowEditForm}
-              editLoading={contactState.loading.put}
             />
           )}
 

@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Index from "../../../components/Image";
 import ContactForm from "./ContactForm";
 import style from "../Contact.module.css";
 
 // import icon
-import editIcon from "../../../images/edit-icon.png"
+import editIcon from "../../../images/edit-icon.png";
 
 const ContactDetail = ({
   contact,
   showEditForm,
   setShowEditForm,
   onEditSubmit,
-  editLoading = false,
 }) => {
   const { firstName, lastName, age, photo } = contact;
 
-  useEffect(() => {
-    if (!editLoading) setShowEditForm(false);
-  }, [editLoading]);
-
   const _onEditSubmit = (data) => {
-    console.log(data)
+    console.log(data);
     onEditSubmit(data);
   };
 

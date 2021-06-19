@@ -8,7 +8,9 @@ const Modal = ({ open, children, onRequestClose }) => {
   return (
     <div className={modalClass}>
       <div className={style.inner}>
-        <p className={style.exit} onClick={onRequestClose}>X</p>
+        <p className={style.exit} onClick={onRequestClose}>
+          X
+        </p>
         {children}
       </div>
     </div>

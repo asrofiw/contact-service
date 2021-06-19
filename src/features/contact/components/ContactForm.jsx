@@ -70,9 +70,7 @@ const ContactForm = ({ current, loading = false, onSubmit }) => {
       <div style={{ textAlign: "center" }}>
         <button
           type="submit"
-          className={
-            `${style.submit} ${style["submit-enable"]}`
-          }
+          className={`${style.submit} ${style["submit-enable"]}`}
           disabled={loading}
         >
           {label}

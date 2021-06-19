@@ -11,7 +11,8 @@ const ErrorBox = ({ message, style = {} }) => {
 };
 
 ErrorBox.propTypes = {
-  message: PropTypes.oneOf([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+  message: PropTypes.oneOf([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+    .isRequired,
   style: PropTypes.object,
 };
 

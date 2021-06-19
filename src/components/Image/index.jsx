@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const defaultPhoto = "https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png";
+const defaultPhoto =
+  "https://www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png";
 
 const Image = ({
   src,
